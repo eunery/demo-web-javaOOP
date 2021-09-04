@@ -9,14 +9,18 @@ import java.util.List;
 
 @Service
 public class PostService {
+    private List<Post> posts = new ArrayList<Post>() {{
+        add(new Post("123", new Date()));
+        add(new Post("Sosiska", new Date()));
+        add(new Post("Java the best!1", new Date()));
+    }};
 
     public List<Post> listAllPosts(){
-        List<Post> CountPost = new ArrayList<Post>() {{
-            add(new Post("123", new Date()));
-            add(new Post("Sosiska", new Date()));
-            add(new Post("Java the best!1", new Date()));
-        }};
-        return CountPost;
+        return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
     }
 
 }
