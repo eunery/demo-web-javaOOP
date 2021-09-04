@@ -10,7 +10,7 @@ public class LikesService {
     @Autowired
     private PostService postService;
 
-    public Integer like(){
+    public Integer like(Long postId){
         Post post = postService.listAllPosts().get(postId.intValue());
         post.setLikes(post.getLikes() + 1);
         return post.getLikes();
