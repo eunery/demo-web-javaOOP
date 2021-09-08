@@ -7,11 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 @Controller
 public class LikesController {
 
     @Autowired
     private LikesService likesService;
+    @Autowired
+    private PostService postService;
 
     @ResponseBody
     @RequestMapping(path = "/post/{id}/like", method = RequestMethod.POST)

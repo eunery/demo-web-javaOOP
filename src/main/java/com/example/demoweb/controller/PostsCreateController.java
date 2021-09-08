@@ -15,11 +15,12 @@ public class PostsCreateController {
     private PostService postsService;
 
     @RequestMapping(path = "/new", method = RequestMethod.GET)
-    public String create(Model model){
+    public String create(Model model) {
         return "create";
     }
+
     @RequestMapping(path = "/new", method = RequestMethod.POST)
-    public String doCreate(@ModelAttribute("text") String text){
+    public String doCreate(@ModelAttribute("text") String text) {
         postsService.create(text);
         return "redirect:/";
     }
