@@ -20,7 +20,7 @@ public class Post {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public Integer getLikes() {
